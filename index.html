@@ -1,0 +1,37 @@
+<html>
+<head>
+	
+	<link rel="stylesheet" href="animate.css" />
+</head>
+<body>
+
+"duur, vertraging, aantal keer ,effect"
+ 
+<div>
+	<div style="background-color:red; width:100px; height:100px;" data-animate-in="0.5,0,1,slideInLeft" data-animate-out="0.5,0,1,slideOutLeft" class="demo">
+	</div>
+	<button id="start">Start Animate In</button>
+	<button id="stop">Start Animate Out</button>
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+<script src="animate.js"></script>
+<script>
+$(document).ready(function(){
+	initAnimations();
+
+	$("#start").on("click",function(){
+		$(".demo").addClass('animated in');
+	});
+	$("#stop").on("click",function(){
+		$(".demo").addClass('animated out');
+	});
+
+	$(".demo").on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",function(){
+		$(this).removeClass("animated in out");
+	});
+});
+</script>
+
+</body>
+</html>
